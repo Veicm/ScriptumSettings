@@ -1,5 +1,5 @@
 import sqlite3
-from handler_utils import clean_lection_list
+import handler_utils as utils
 
 
 class DBHandler:
@@ -38,7 +38,7 @@ class DBHandler:
         """
         self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
         raw: list[tuple[str]] = self.cursor.fetchall()
-        result: list[int] = clean_lection_list(raw)
+        result: list[int] = utils.clean_lection_list(raw)
         return result
 
 
