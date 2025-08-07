@@ -1,5 +1,6 @@
 import re
 
+
 def clean_lection_list(SQLite_output: list[tuple[str]]) -> list[int]:
     """
     Extracts the numbers of the lection from the raw output.
@@ -17,6 +18,6 @@ def clean_lection_list(SQLite_output: list[tuple[str]]) -> list[int]:
             word_list.append(word)
 
     for entry in word_list:
-        number_list.append(int(re.search(r'\d+', entry).group()))
+        number_list.append(int(re.search(r"\d+", entry).group()))
 
     return number_list
